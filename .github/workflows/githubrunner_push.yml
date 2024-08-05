@@ -10,7 +10,7 @@ on:
 
 jobs:
   my-job:
-    name: Diff to Ancestor, Publish and attach Report, and Run Project Tests
+    name: Diff to Ancestor, Publish and attach Report, and Craete Webview
     runs-on: ubuntu-latest
     steps:
       - name: Check out repository
@@ -34,14 +34,17 @@ jobs:
         uses: matlab-actions/run-command@v2
         with:
           command: lastpush="${{ github.event.before }}", diffGitHub_push(lastpush)
+      - name: Crete Project Webview
+        uses: matlab-actions/run-command@v2
+        with:
+          command: genWebView
       - name: Upload Comparison Reports
         uses: actions/upload-artifact@v3
         with:
            name: diffreports
-           path: ${{ github.workspace }}/*.html
-      - name: Run All Project Tests
-        uses: matlab-actions/run-command@v2
-        with:
-          command: genWebView
+           path: |
+            ${{ github.workspace }}/*.html
+            ${{ github.workspace }}/WebExplore_discretePI.zip
+
 
 #   Copyright 2022-2023 The MathWorks, Inc.
