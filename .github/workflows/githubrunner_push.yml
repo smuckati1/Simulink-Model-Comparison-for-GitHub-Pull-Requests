@@ -40,6 +40,6 @@ jobs:
       - name: Run All Project Tests
         uses: matlab-actions/run-command@v2
         with:
-          command: runtests
+          command: genWebView
 
 #   Copyright 2022-2023 The MathWorks, Inc.
