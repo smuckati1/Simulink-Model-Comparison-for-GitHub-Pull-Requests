@@ -16,8 +16,7 @@ function genWebView()
         load_system(mdlName{i})
         mdl_webView = slwebview(mdlName{i}, ...
             'FollowModelReference','on',...
-            'PackageName', ['WebExplore_' mdlName{i}],...
-            'PackageFolder',fullfile(prj.RootFolder,'GeneratedArtifacts','Webviews'));
+            'PackageName', ['WebExplore_' mdlName{i}])
         close_system(mdlName{i})
     end
 
