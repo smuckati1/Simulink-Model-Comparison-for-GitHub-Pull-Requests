@@ -6,8 +6,6 @@ function genWebView()
 
 % Get handle to project
     prj = matlab.project.currentProject;
-    disp(' ')
-    disp("Project: " + prj.Name)
 
 % Generate Webview
     for i = 1:length(mdlName)
