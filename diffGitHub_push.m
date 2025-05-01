@@ -2,7 +2,7 @@ function diffGitHub_push(lastpush)
     % Open project
     proj = openProject(pwd);
     
-    % List modified models since the last push. Use *** to search recursively for modified 
+    % List  modified models since the last push. Use *** to search recursively for modified 
     % SLX files starting in the current folder
     % git diff --name-only lastpush ***.slx
     gitCommand = sprintf('git --no-pager diff --name-only %s ***.slx', lastpush);
